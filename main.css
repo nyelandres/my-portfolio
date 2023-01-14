@@ -3,9 +3,25 @@
 @tailwind utilities;
 
 .this-title {
-    @apply uppercase font-black sm:text-xl md:text-3xl lg:text-5xl sm:leading-tight md:leading-normal lg:leading-tight pb-2;
+    @apply uppercase font-black sm:text-5xl pt-10 md:text-3xl lg:text-5xl sm:leading-tight md:leading-normal lg:leading-tight pb-2;
 }
 
 .this-body {
-    @apply text-2xl leading-loose;
+    @apply text-2xl pb-10 leading-loose;
+}
+
+.this-path-v1 {
+  @apply absolute w-full h-2/4 bg-slate-800;
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+  transform: translateY(-150px);
+}
+
+.this-path-v2 {
+  @apply absolute w-full h-2/4 bg-slate-900 ;
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+  transform: translateY(-150px);
+}
+
+.this-card {
+  @apply p-5 bg-slate-400 text-slate-900 rounded-3xl shadow-black;
 }
