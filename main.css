@@ -23,5 +23,6 @@
 }
 
 .this-card {
-  @apply p-5 bg-slate-400 text-slate-900 rounded-3xl shadow-black;
+  min-width: 250px;
+  @apply p-5 bg-slate-400 text-slate-900 rounded-3xl shadow-black  ;
 }
