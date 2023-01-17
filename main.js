@@ -1,7 +1,7 @@
 
 
 // Structuring the page
-const thisBody = document.getElementById('this-body');
+const thisBody = document.getElementById('js-content');
 const thisText = document.createElement('p');
 let content = 'Welcome to the portfolio of Ken Frianeza, a skilled and experienced web developer with expertise in both front-end and back-end development. As a master problem-solver and creative thinker, Kens passion for technology and design shines through in every project he undertakes. From crafting visually stunning websites and applications to developing efficient and effective code, Ken\'s work is a testament to his dedication and commitment to excellence. Explore this portfolio to see the wide range of projects Ken has worked on and the impact he has made in the industry.';
 thisText.innerText += content;
@@ -19,38 +19,41 @@ let showFullTexTContent = content;
 
 const thisButton = document.createElement('button');
 
-
-
-console.log(stringSize);
-
 let contentExceedSize = stringSize >= maxStringSize;  // if true this will display the showmore button
 // let contentDoesNotExceedSize = stringSize <= maxStringSize; // else this will not display // will not do the else. should not display anything if false
+let contentBool = null; // for if looping declare a false value
 
 if (contentExceedSize) {
-
   let showHalfTextContent = (stringValue.substring(minStringSize, maxStringSize)); // Convert it to only 150 letters
   thisText.innerText = showHalfTextContent; // display it to the container
 
+  thisButton.style.textDecoration = "underline";
   thisButton.innerText = "Show more ..."; // display the showmore button
   thisBody.appendChild(thisButton); // append the button
 
-  let contentBool = false; // for if looping declare a false value
-
+ 
+  contentBool = false; // for if looping declare a false value
   thisButton.addEventListener('click', () => { // to click the thisButton
-
-    if(!contentBool) { // contentBool is false condition will be true
-    thisText.innerText = showFullTexTContent; // display full content
-    thisButton.innerText = "Show less ..."; // display the showless button
-     contentBool = true; // this will make the declared value into true to run the else condition
-  } else {
-    thisText.innerText = showHalfTextContent; // display half content
-    thisButton.innerText = "Show more ..."; // display the showmore button
-    contentBool = false; // this will make the declared value into false to run the if condition
-  }
-
+  
+  // Ano tong nasa line 38?
+  const showState = {less: "Show less ...", more: "Show more ..."}
+  
+  !contentBool ? 
+    changeDisplayButton(true, showFullTexTContent, showState.less) : 
+    changeDisplayButton(false, showHalfTextContent, showState.more);
+    
 })
 
-} 
+}
+
+// changeDisplayButton function: display full content, display the showless button
+// this will make the declared value into true to run the else condition
+
+function changeDisplayButton(condition, textContent, stringValue) {
+  thisText.innerText = textContent; 
+  thisButton.innerText = stringValue; 
+  contentBool = condition; 
+}
 
 
 
