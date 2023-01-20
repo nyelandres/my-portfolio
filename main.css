@@ -20,28 +20,6 @@
   @apply p-5 bg-slate-400 text-slate-900 rounded-3xl shadow-black;
 }
 
-.carousel {
-  @apply h-96;
-}
-
-.carousel-inner {
-  @apply h-full;
-}
-
-.carousel-item {
-  @apply h-full;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  @apply h-14 w-14 top-1/2 -translate-y-1/2;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  @apply h-14 w-14 top-1/2 bg-slate-900;
-}
-
 body::-webkit-scrollbar {
   @apply w-[10px] bg-[#0b1120];
 }
@@ -63,3 +41,42 @@ body::-webkit-scrollbar-thumb {
 .this-scroll::-webkit-scrollbar-thumb {
   @apply rounded-xl bg-gray-600 dark:bg-slate-700;
 }
+
+.this-quote {
+  @apply italic font-serif  text-slate-100 ml-6;
+}
+
+.this-quote .this-is-quoted{
+  @apply before:content-['\201c'] before:text-7xl;
+}
+
+.bg-image:after{
+  content: ''; 
+  position: absolute; 
+  z-index: -1;
+  inset: 0; 
+  opacity: .5;
+
+  background-image: url(/media/night-3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* carousel */
+.carousel__indicator {
+  @apply bg-slate-500;
+}
+
+.carousel__indicator.current-slide {
+  @apply bg-slate-100;
+}
+
+.carousel__track{
+  transition: transform 250ms ease-in;
+}
+
+/* .is-hidden {
+  display: hidden;
+} */
+
